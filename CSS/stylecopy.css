@@ -16,6 +16,9 @@ h2 {
 h3{
     font-size: 1.25rem;
 }
+h4 {
+    font-size: 1.5rem;
+}
 
 a:link, a:visited {
     color: #1a1a1a;
@@ -51,47 +54,447 @@ a:hover {
 }
 
 /******* Navigation Using Flexbox *******/
-nav {
-  background-color: #fff;
-  border-top: 1px solid #e0e0e0;
-  border-bottom: 1px solid #e0e0e0;
-}
-
-nav ul {
-  list-style: none;
+/* ── Reset & base ── */
+* {
   margin: 0;
   padding: 0;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+  box-sizing: border-box;
 }
 
-nav ul li a {
+body {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+/* ── Nav container: two rows ── */
+nav {
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+}
+
+/* ── Top row: logo left, secondary links right ── */
+.nav-top {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 6px 10px;
+}
+
+/* ── Logo ── */
+.nav-top img {
+  height: 36px;
+  width: auto;
+}
+
+/* ── Secondary nav links ── */
+.nav-secondary {
+  display: flex;
+  list-style: none;
+  gap: 0;
+}
+
+.nav-secondary li a {
   display: block;
-  padding: 12px 14px;
+  color: #555555;
   text-decoration: none;
-  color: #1a1a1a;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-left: 1px solid #e0e0e0;
+  transition: color 0.2s;
+}
+
+.nav-secondary li a:hover {
+  color: #1a1a5e;
+}
+
+/* ── Bottom row: primary nav links ── */
+.nav-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 0 8px;
+}
+
+.nav-bottom img {
+  height: 36px;
+  width: auto;
+  flex-shrink: 0;
+}
+
+/* ── Primary nav links ── */
+.nav-primary {
+  display: flex;
+  list-style: none;
+  align-items: center;
+  justify-content: space-evenly;
+  flex: 1;
+}
+
+.nav-primary li a {
+  display: block;
+  color: #1a1a5e;
+  text-decoration: none;
   font-size: 13px;
   font-weight: 400;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.02em;
+  padding: 0 10px;
+  height: 44px;
+  line-height: 44px;
   white-space: nowrap;
+  transition: background-color 0.2s, color 0.2s;
 }
 
-nav ul li a:hover {
-  color: #0a3c87; /* Old Navy's classic navy blue */
-  text-decoration: underline;
+.nav-primary li a:hover {
+  background-color: #f0f4ff;
+  color: #00006b;
 }
 
-/* Highlight the promotional links */
-nav ul li:last-child a {
-  color: #c00; /* Red for "New and Trending!" */
+/* "New and Trending!" */
+.nav-primary li:first-child a {
+  font-weight: 700;
 }
 
-nav ul li:last-child a:hover {
-  color: #900;
+/* "Today's Deals!" — red */
+.nav-primary li:last-child a {
+  color: #cc0000;
+  font-weight: 700;
 }
 
+.nav-primary li:last-child a:hover {
+  color: #990000;
+  background-color: #fff5f5;
+}
+
+.spring-card {
+  background-image: url("/Images/springcollection.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  aspect-ratio: 16 / 9;       
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 24px 24px 24px;
+  gap: 100%;
+  max-width: 100%;
+  width: 100%;
+  margin: 32px auto;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.spring-card h2 {
+  width: auto;
+  margin: 0;
+}
+
+.spring-card h2 a {
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #1a1a5e;
+  background-color: #ffffff;
+  border: 2px solid #1a1a5e;
+  padding: 8px 24px;
+  border-radius: 4px;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.spring-card h2 a:hover {
+  background-color: #1a1a5e;
+  color: #ffffff;
+  border-color: #1a1a5e;
+}
+
+.spring-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;   
+  text-align: left;
+  width: 100%;
+}
+
+.spring-buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  justify-content: flex-start;
+  margin-top: 12px;
+}
+
+.spring-card h2 {
+  width: auto;
+  margin: 0;      
+}
+
+/* ── Grid container: single centered row ── */
+.shop-grid {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  padding: 32px 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ── Individual card ── */
+.shop-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  max-width: 280px;
+}
+
+.shop-card img {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  display: block;
+  border-radius: 4px;
+}
+
+/* ── Button styled h2 ── */
+.shop-card h2 {
+  margin-top: 12px;
+  width: 100%;
+}
+
+.shop-card h2 a {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #1a1a5e;
+  background-color: #ffffff;
+  border: 2px solid #1a1a5e;
+  padding: 12px 16px;
+  border-radius: 4px;
+  width: 100%;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.shop-card h2 a:hover {
+  background-color: #1a1a5e;
+  color: #ffffff;
+}
+
+/* ── Promo grid: single centered row ── */
+.promo-grid {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  padding: 32px 24px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* ── Individual promo card ── */
+.promo-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+}
+
+.promo-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 4px;
+}
+
+.promo-card p {
+  font-size: 14px;
+  color: #555555;
+  line-height: 1.5;
+  margin: 12px 0;
+  padding: 0 8px;
+}
+
+/* ── Button styled h2 ── */
+.promo-card h2 {
+  width: auto;
+  margin-top: 12px;
+}
+
+.promo-card h2 a {
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #1a1a5e;
+  background-color: #ffffff;
+  border: 2px solid #1a1a5e;
+  padding: 8px 24px;
+  border-radius: 4px;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.promo-card h2 a:hover {
+  background-color: #1a1a5e;
+  color: #ffffff;
+}
+
+.disney-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 800px;
+  margin: 32px auto;
+  padding: 0 24px;
+}
+
+.disney-images {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.disney-images img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 4px;
+}
+
+.disney-section h1 {
+  font-size: 24px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #1a1a5e;
+  margin-bottom: 8px;
+}
+
+.disney-section p {
+  font-size: 14px;
+  color: #555555;
+  line-height: 1.5;
+  margin-bottom: 16px;
+}
+
+/* ── Small button matching Old Navy style ── */
+.disney-section h2 {
+  width: auto;
+  margin-top: 4px;
+}
+
+.disney-section h2 a {
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #1a1a5e;
+  background-color: #ffffff;
+  border: 2px solid #1a1a5e;
+  padding: 8px 24px;
+  border-radius: 4px;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.disney-section h2 a:hover {
+  background-color: #1a1a5e;
+  color: #ffffff;
+}
+
+.clearance-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 800px;
+  margin: 32px auto;
+  padding: 0 24px;
+}
+
+.clearance-section img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 4px;
+}
+
+.fanshop-card {
+  background-image: url("/Images/fanshop.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  aspect-ratio: 3 / 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 24px;
+  max-width: 100%;
+  width: 100%;
+  margin: 32px auto;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.fanshop-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+}
+
+.fanshop-buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  justify-content: center;
+  margin-top: 12px;
+}
+
+.fanshop-card h2 {
+  width: auto;
+  margin: 0;
+}
+
+.fanshop-card h2 a {
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #1a1a5e;
+  background-color: #ffffff;
+  border: 2px solid #1a1a5e;
+  padding: 8px 24px;
+  border-radius: 4px;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.fanshop-card h2 a:hover {
+  background-color: #1a1a5e;
+  color: #ffffff;
+  border-color: #1a1a5e;
+}
 
 /******* Components *******/
 .button:link, .button:visited {
@@ -108,6 +511,117 @@ nav ul li:last-child a:hover {
 }
 .button:hover {
     background-color: #fa98a7;
+}
+
+
+/* ── Hero header section ── */
+.jeans-header {
+  text-align: center;
+  padding: 32px 16px 16px;
+}
+
+.jeans-header h1 {
+  font-size: 28px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #1a1a5e;
+  margin-bottom: 8px;
+}
+
+.jeans-header p {
+  font-size: 14px;
+  color: #555555;
+}
+
+/* ── Filter/category tabs ── */
+.jeans-filters {
+  display: flex;
+  justify-content: center;
+  padding: 12px 16px;
+  margin-bottom: 32px;
+}
+
+.jeans-filters ul {
+  display: flex;
+  list-style: none;
+  gap: 0;
+}
+
+.jeans-filters ul li a {
+  display: block;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #555555;
+  padding: 8px 20px;
+  border: none;
+  transition: color 0.2s, border-bottom-color 0.2s;
+
+}
+.jeans-filters ul li:first-child a {
+  color: #1a1a5e;
+  border-bottom: 2px solid #1a1a5e;
+  background-color: transparent;
+}
+
+.jeans-filters ul li:last-child a {
+  border-right: none
+  border-bottom: 2px solid transparent;
+}
+
+.jeans-filters ul li a:hover {
+  color: #1a1a5e;
+  background-color: transparent;
+  border-bottom: 2px solid #1a1a5e;
+}
+
+/* ── Product grid ── */
+.jeans-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 16px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px 48px;
+}
+
+.jeans-grid .jeans-card {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+}
+
+.jeans-card img {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border-radius: 4px;
+  display: block;
+  background-color: #f5f5f5;
+  transition: opacity 0.2s;
+  cursor: pointer;
+}
+
+.jeans-card img:hover {
+  opacity: 0.88;
+}
+
+.jeans-card h4 {
+  font-size: 15px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #1a1a5e;
+  margin-top: 10px;
+  margin-bottom: 4px;
+}
+
+.jeans-card p {
+  font-size: 13px;
+  color: #666666;
+  line-height: 1.4;
 }
 
 /* ── Footer Base ── */
