@@ -496,6 +496,129 @@ nav {
   border-color: #1a1a5e;
 }
 
+/* ── Section wrapper ── */
+.picks-section {
+  max-width: 1200px;
+  margin: 32px auto;
+  padding: 0 24px;
+}
+
+/* ── Header ── */
+.picks-header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.picks-header h2 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #1a1a5e;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 16px;
+}
+
+/* ── Tabs ── */
+.picks-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 0;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+.picks-tabs h3 {
+  margin: 0;
+}
+
+.picks-tabs h3 a {
+  display: block;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #555555;
+  padding: 8px 24px;
+  border-bottom: 2px solid transparent;
+  transition: color 0.2s, border-bottom-color 0.2s;
+}
+
+.picks-tabs h3:first-child a {
+  color: #1a1a5e;
+  border-bottom: 2px solid #1a1a5e;  
+}
+
+.picks-tabs h3 a:hover {
+  color: #1a1a5e;
+  border-bottom: 2px solid #1a1a5e;
+}
+
+/* ── Product grid ── */
+.picks-grid {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;           
+  padding-bottom: 16px;
+  scrollbar-width: thin;
+}
+
+/* ── Individual product card ── */
+.picks-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 200px;           
+  max-width: 200px;
+  flex-shrink: 0;
+}
+
+.picks-card img {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border-radius: 4px;
+  background-color: #f5f5f5;
+  margin-bottom: 8px;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.picks-card img:hover {
+  opacity: 0.88;
+}
+
+/* ── Product info ── */
+.picks-name {
+  font-size: 13px;
+  color: #1a1a1a;
+  line-height: 1.4;
+  margin-bottom: 4px;
+}
+
+.picks-price {
+  font-size: 14px;
+  font-weight: 700;
+  color: #cc0000;            
+  margin-bottom: 4px;
+}
+
+.price-original {
+  text-decoration: line-through;
+  color: #999999;             
+  font-weight: 400;
+}
+
+.picks-perk {
+  font-size: 11px;
+  color: #999999;
+  line-height: 1.3;
+}
+
+.picks-disclaimer {
+  font-size: 11px;
+  color: #888888;
+  text-align: center;
+  margin-top: 12px;
+}
+
 /******* Components *******/
 .button:link, .button:visited {
     color: white;
