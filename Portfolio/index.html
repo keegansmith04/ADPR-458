@@ -6,16 +6,23 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  </header>
-        <nav>
-            <ul>
-                <li><a href="index.html">About</a></li>
-                <li><a href="copy.html">Copy & Graphics</a></li>
-                <li><a href="photo.html">Photography</a></li>
-                <li><a href="video.html">Video Projects</a></li>
-            </ul>
-        </nav>
-   </header>  
+ <header>
+  <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <nav id="nav-menu">
+    <ul>
+      <li><a href="index.html">About</a></li>
+      <li><a href="copy.html">Copy & Graphics</a></li>
+      <li><a href="photo.html">Photography</a></li>
+      <li><a href="video.html">Video Projects</a></li>
+    </ul>
+  </nav>
+</header> 
+
 
    <h1>Keegan Smith</h1>
 
@@ -42,13 +49,19 @@
     </div>
 </section>
 
-<h2>About Me</h2>
-<p>Hello, I'm Keegan Smith and I am currently a junior at the University of Nebraska-Lincoln. Welcome to my portfolio!</p>
-    <img src="Images/headshot.png" alt="Headshot" class="headshot">
+<div class="about-box">
+    <div class="about-text">
+        <h2>About Me</h2>
+        <p>Hello, my name is Keegan Smith. I am currently a junior at the University of Nebraska-Lincoln studying Sports Media and Communications as well as Advertising and Public Relations with a minor in coaching. I am from Junction City, Kansas but am currently based in Lincoln, Nebraska.</p>
+        </p>At UNL I am a student lead for the Production House experience lab and have an internship with LAYMAR throught the College of Business. Outside of school, I also oversee the Creative Landscaping social media pages. Welcome to my portfolio, I hope you enjoy taking a look at my work!</p>
+    </div>
+    <div class="headshot-wrapper">
+        <img src="Images/headshot.png" alt="Headshot" class="headshot">
+    </div>
+</div>
 
 <footer>
     <p>&copy; 2026 Keegan Smith</p>
-    <p>Let's Connect!</p>
     <p>ksmith169@huskers.unl.edu</p>
     <p>785-210-9636</p>
     <p><a href="https://www.instagram.com/kee.gan_smith/" target="_blank">Instagram</a></p>
@@ -56,5 +69,6 @@
 </footer>
 
 </div><!-- End of container -->
+<script src="script.js"></script>
 </body>
 </html>
